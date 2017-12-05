@@ -53,7 +53,7 @@ difference: function difference(array, [values]){
         var diff = [];
         var i = 0;
         while(i < array.length){
-          if  (values.indexOf(array[i]) === -1 ){
+          if  ([values].indexOf(array[i]) === -1 ){
                diff.push(array[i]);
           }   i++;
         } return diff;
