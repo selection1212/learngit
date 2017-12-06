@@ -58,5 +58,17 @@ difference: function difference(array, [values]){
           }   i++;
         } return diff;
     },
+/**
+ * 
+ * 
+ * @param {any} collection 
+ * @param {any} output 
+ */
+forEach: function forEach(collection,output) {
+    let n = collection.length;
+    for(i = 0 ; i < n ; i++){
+       output (collection[i]);
+    }
+   }    
 }
 
