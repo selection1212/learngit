@@ -47,13 +47,19 @@ var daizy1212 = {
  * 
  * @param {any} array 
  * @param {any} [values] 
- * @returns 
+ * @returns  array
  */
-difference: function difference(array, [values]){
+difference: function difference(array, ...values){
         var diff = [];
         var i = 0;
+        var j = 0;
+        var combinevalues = [];
+        while(values[j]){
+            combinevalues += values.concat(values[j]);
+            j++;
+        }
         while(i < array.length){
-          if  ([values].indexOf(array[i]) === -1 ){
+          if  (combinevalues.indexOf(array[i]) === -1 ){
                diff.push(array[i]);
           }   i++;
         } return diff;
@@ -61,14 +67,23 @@ difference: function difference(array, [values]){
 /**
  * 
  * 
- * @param {any} collection 
- * @param {any} output 
+ * @param {any} array 
+ * @param {any} value 
+ * @param {any} start 
+ * @param {any} end 
+ * @returns 
  */
-forEach: function forEach(collection,output) {
-    let n = collection.length;
-    for(i = 0 ; i < n ; i++){
-       output (collection[i]);
-    }
-   }    
-}
+fill : function fill(array,value,start,end){
+        start === undefined?start = 0:start >= 0 ? start:start = array.length + start;
+        end === undefined?end = array.length:end >= 0 ? end : end = array.length + end;
+           while(start < end){
+                array[start] = value;
+                start++;
+            }
+            return array;
+    },
+
+
+
+}   
 
