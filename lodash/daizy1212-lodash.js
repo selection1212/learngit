@@ -167,27 +167,23 @@ flattenDeep:function flattenDeep(array) {
  * @param {any} n 
  * @returns 
  */
-flattenDepth:function flattenDepth(array,n) {
+flattenDepth:function flattenDepth(array, n) {
     var count = 0;
     for (i = 0; i < array.length; i++) {
         if (Array.isArray(array[i])) {
             var newary = array[i];
             array.splice(i, 1);
+             count++;
             for (j = 0; j < newary.length; j++) {
                 array.splice(i, 0, newary[j]);
                 i++;
-                count++;
             }
-            i--;
-           
+            i = i - newary.length ;
             if (count === n) {
-        return array
-    } else {
-        return flattenDepth(array,n);
+                return array;
+            } 
+        }
     }
-
-        } 
-    }  
 },
 /**
  * 
