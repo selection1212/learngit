@@ -90,7 +90,7 @@ fill : function fill(array,value,start,end){
  * @returns {array}
  */
 drop: function drop(array,n){
-    n = undefined ? n = 1:n;
+    n === undefined ? n = 1:n;
     if(array.length === 0 || n >= array.length){
         return (array = []);
     }
@@ -105,8 +105,8 @@ drop: function drop(array,n){
  * @param {any} n 
  * @returns {array}
  */
-dropright: function dropright(array,n){
-    n = undefined ? n = 1:n;
+dropRight: function dropRight(array,n){
+    n === undefined ? n = 1:n;
     if(array.length === 0 || n >= array.length){
         return (array = []);
     }
@@ -139,7 +139,7 @@ flatten: function flatten(array) {
  * @param {any} array 
  * @returns 
  */
-flatteenDeep:function flattenDeep(array) {
+flattenDeep:function flattenDeep(array) {
     var count = 0;
     for (i = 0; i < array.length; i++) {
         if (Array.isArray(array[i])) {
@@ -157,7 +157,7 @@ flatteenDeep:function flattenDeep(array) {
     if (count === array.length) {
         return array
     } else {
-        return flatten(array);
+        return flattenDeep(array);
     }
 },
 /**
@@ -176,17 +176,18 @@ flattenDepth:function flattenDepth(array,n) {
             for (j = 0; j < newary.length; j++) {
                 array.splice(i, 0, newary[j]);
                 i++;
+                count++;
             }
             i--;
-        } else {
-            count++;
-        }
-    }
-    if (count === n) {
+           
+            if (count === n) {
         return array
     } else {
         return flattenDepth(array,n);
     }
+
+        } 
+    }  
 },
 /**
  * 
@@ -194,7 +195,7 @@ flattenDepth:function flattenDepth(array,n) {
  * @param {any} pairs 
  * @returns {object}
  */
-fromParis: function fromParis(pairs){
+fromPairs: function fromParis(pairs){
     var oj = {};
     for(i = 0 ; i < pairs.length; i++){
         oj[pairs[i][0]] = pairs[i][1];
@@ -240,7 +241,8 @@ initial: function initial(array){
     if(array.length === 0){
         return array;
     }
-    return array.splice(array.length-1);
+     array.splice(array.length-1);
+     return array;
 },
 /**
  * 
