@@ -82,8 +82,194 @@ fill : function fill(array,value,start,end){
             }
             return array;
     },
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} n 
+ * @returns {array}
+ */
+drop: function drop(array,n){
+    n = undefined ? n = 1:n;
+    if(array.length === 0 || n >= array.length){
+        return (array = []);
+    }
+    for(i = 0 ; i < n ; i++){
+         array.shift(i);
+    } return array;
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} n 
+ * @returns {array}
+ */
+dropright: function dropright(array,n){
+    n = undefined ? n = 1:n;
+    if(array.length === 0 || n >= array.length){
+        return (array = []);
+    }
+    for(i = 0 ; i < n ; i++){
+         array.pop(i);
+    } return array;
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @returns {array}
+ */
+flatten: function flatten(array) {
+    for (i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            var newary = array[i];
+            array.splice(i, 1);
+            for (j = 0; j < newary.length; j++) {
+                array.splice(i, 0, newary[j]);
+                i++;
+            } i--;
+        }
+    }
+    return array;
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @returns 
+ */
+flatteenDeep:function flattenDeep(array) {
+    var count = 0;
+    for (i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            var newary = array[i];
+            array.splice(i, 1);
+            for (j = 0; j < newary.length; j++) {
+                array.splice(i, 0, newary[j]);
+                i++;
+            }
+            i--;
+        } else {
+            count++;
+        }
+    }
+    if (count === array.length) {
+        return array
+    } else {
+        return flatten(array);
+    }
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} n 
+ * @returns 
+ */
+flattenDepth:function flattenDepth(array,n) {
+    var count = 0;
+    for (i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            var newary = array[i];
+            array.splice(i, 1);
+            for (j = 0; j < newary.length; j++) {
+                array.splice(i, 0, newary[j]);
+                i++;
+            }
+            i--;
+        } else {
+            count++;
+        }
+    }
+    if (count === n) {
+        return array
+    } else {
+        return flattenDepth(array,n);
+    }
+},
+/**
+ * 
+ * 
+ * @param {any} pairs 
+ * @returns {object}
+ */
+fromParis: function fromParis(pairs){
+    var oj = {};
+    for(i = 0 ; i < pairs.length; i++){
+        oj[pairs[i][0]] = pairs[i][1];
+    } return oj;
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @returns 
+ */
+head: function head(array){
+    return array[0];
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} value 
+ * @param {any} start 
+ * @returns {number}
+ */
+indexOf: function indexOf(array, value, start) {
+    start === undefined ? start = 0 : start >= 0 ? start :start = 0 ;
+    if (start >= array.length ) {
+       return -1;
+    }
+    for (i = start; i < array.length; i++) {
+        if (array[i] === value) {
+            return i;
+        }
+    }
+    return -1;
 
-
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @returns {array}
+ */
+initial: function initial(array){
+    if(array.length === 0){
+        return array;
+    }
+    return array.splice(array.length-1);
+},
+/**
+ * 
+ * 
+ * @param {any} arrays 
+ * @returns {arrary}
+ */
+intersection: function intersection(...arrays) {
+    let bigary = [];
+    let newary = [];
+    for (i = 0; i < arrays.length; i++) {
+        if (arrays[i] === []) {
+            return arrays[i];
+        }
+        bigary = bigary.concat(arrays[i]);
+    }
+    for (j = 0; j < arrays[0].length; j++) {
+        let k = bigary.indexOf(arrays[0][j], j);
+        let count = 0;
+        while (k !== -1) {
+            count++;
+            k = bigary.indexOf(arrays[0][j], k + 1);
+        }
+        if (count === arrays.length) {
+            newary.push(arrays[0][j]);
+        }
+    }
+    return newary;
+},
 
 }   
 
