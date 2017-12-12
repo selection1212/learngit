@@ -299,7 +299,7 @@ join: function join(array,separator){
         return "";
     }
     return array.reduce(function(a,b){
-        return (a + this.c + b);
+        return (a +=""+ this.c + b);
     })
 },
 /**
@@ -320,10 +320,15 @@ last: function last(array){
  * @returns {number}
  */
 lastIndexOf: function lastIndexOf(array,value,fromIndex=array.length-1){
-    for(let i = fromIndex ; i >= 0 ; i++){
+    var label = 0;
+    for(let i = fromIndex ; i >= 0 ; i--){
         if(array[i] === value){
+            label = 1;
             return i;
         }
+    } 
+    if(label === 0){
+        return -1;
     }
 },
 /**
@@ -333,7 +338,7 @@ lastIndexOf: function lastIndexOf(array,value,fromIndex=array.length-1){
  * @param {number} [n=0] 
  */
 nth: function nth(array,n=0){
-return (n >=0) ? array[n-1]:array[array.length+n];
+return (n >=0) ? array[n]:array[array.length+n];
 },
 /**
  * 
