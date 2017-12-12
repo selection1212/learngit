@@ -1,0 +1,23 @@
+<script>
+    var theNumber = Number(prompt("a"));
+    var theNumber = Number(prompt("b"));
+    var theNumber = Number(prompt("c"));
+    delta=(b**2)-(4*a*c);
+    if   (delta>0) {
+      
+        var x1=(-b+Math.sqrt(delta))/2/a;
+        var x2=(-b-Math.sqrt(delta))/2/a;
+        console.log(x1,x2);
+    } else if   (delta==0){
+        var x=-b/2/a;
+        console.log(x);
+    } else {
+        x1real=-b/2/a;  
+        x1image=Math.sqrt(-delta)/2/a;
+        x1=x1real+"+"+x1image+"i";
+        x2real=-b/2/a;
+        x2image=-Math.sqrt(-delta)/2/a;
+        x2=""+x2real+x2image+"i";
+         console.log(x1,x2);
+    }
+</script>

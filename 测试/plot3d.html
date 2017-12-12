@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<style>
+    @keyframes spin-3d {
+        from{
+            transform:rotateX(0deg) rotateZ(0deg);
+        }
+        to {
+            transform:rotateX(360deg) rotateZ(3000deg);
+        }
+    }
+   #xoy {
+       animation: spin-3d 25s infinite inlear;
+       width:200px;
+       height:200px;
+       background-color:rgba(0,0,0,0.3);
+       position: fixed;
+       left:50%;
+       top:50%;
+       margin: -100px 0 0 -100px;
+       transform-style:preserve-3d;
+   }
+   #xoy span {
+       position: absolute;
+       top:50%;
+       left: 50%;
+       width:4px;
+       height:4px;
+   }
+
+    </style>
+</head>
+<body>
+<script>
+    plot3D((x,y) => {
+        return Math.sin(x) + Math.cos(y);
+    },200)
+    function plot3D(f,factor = 1,step = 0.1,xstart = -2*Math.PI,xend = 2 * Math.PI,ystart = xstart, yend = xend ){
+        var z
+        document.write('<div>')
+            for(var x = xstart; x < xend; x+=step){
+                for(var y = ystart; y < yend ; y+=step){
+                    z = f(x,y)
+                    document.write(`<span style = " background-color:hsl(${z*100},80%,75%);
+                    transform: translate3d(${x * factor}px,${y * factor}px,${z * factor}px)"></span>`)
+
+                }
+            }
+            document.write('</div>')
+    }
+    </script>
+
+    
+</body>
+</html>

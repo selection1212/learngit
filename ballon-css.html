@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:160px;
+            height:100%;
+          
+        }
+        button {
+        display:inline-block;
+        width:160px;
+        height: 50px;
+        margin:100px;
+        border-style:none;
+        border-radius:5px;
+        text-align:center; 
+        color:white;
+        background-color:#ff3d2e;
+        cursor:pointer; 
+        }
+        [data-balloon]{
+            position:relative;
+
+        }
+        [data-balloon]::before{
+            content: attr(data-balloon);
+            position:absolute;
+            box-sizing:border-box;
+            background-color:black;
+            padding:6px 12px;
+            border-radius:5px;
+            xopacity:0;
+        }
+        [data-balloon-pos="up"]::before{
+                bottom:100%;
+                margin-bottom:8px;
+                transform: translate(-50%,5px);  
+            }
+        [data-balloon-pos="down"]::before{
+                top:100%;
+                margin-top:8px;
+                transform: translate(-50%,-5px);
+        }
+       [data-balloon-pos="up"]::before, [data-balloon-pos="down"]::before{
+             left:50%;
+           
+          
+        }
+        [data-balloon-pos="left"]::before{
+            right:100%;
+            bottom:50%;
+            transform:translate(0,50%);
+            margin-right:8px;
+            
+        }
+        [data-balloon-pos="right"]{
+            
+        }
+       
+       
+        [data-balloon-length="small"]::before{
+            width:80px;
+        }
+        [data-balloon-length="medium"]::before{
+            width:150px;
+        }
+        [data-balloon-length="large"]::before{
+            
+        }
+        [data-balloon-length="fit"]::before{
+            width:100%;
+        }
+       
+        [data-balloon-pos="up"]::after, [data-balloon-pos="down"]::after{
+            content: '';
+            position:absolute;
+            left:50%;
+            width:0;
+            height:0; 
+            border:4px solid transparent;
+            xopacity:0;
+        }
+        [data-balloon-pos="up"]::after{
+            border-top-color:black;
+            bottom:100%;
+            transform: translate(-50%,5px);
+
+        }
+        [data-balloon-pos="right"]::after{
+            border-right-color:black;
+        }
+        [data-balloon-pos="down"]::after{
+            border-bottom-color:black;
+            top:100%;
+            transform: translate(-50%,-5px);
+        }
+        [data-balloon-pos="left"]::after{
+            border-left-color:black;
+            right:100%;
+            transform:translate(0,50%);
+        }
+
+
+
+
+
+        [data-balloon-pos="up"]:hover::before, [data-balloon-pos="up"]:hover::after{
+
+            transform: translate(-50%,0px);
+            opacity:1;
+            transition: all 1s;
+       
+
+
+
+
+            
+
+
+        
+    </style>
+</head>
+<body>
+<div>
+<button data-balloon="what upffffff!"  data-balloon-pos="up" data-balloon-length="small">Hover me!</button>
+<button data-balloon="what up!" data-balloon-pos="left" data-balloon-length="medium">Hover me!</button>
+<button data-balloon="what up!" data-balloon-pos="right" data-balloon-length="large">Hover me!</button>
+<button data-balloon="what up!"  data-balloon-pos="down" data-balloon-length="fit">Hover me!</button>
+<div>  
+</body>
+</html>

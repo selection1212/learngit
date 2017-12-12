@@ -1,0 +1,126 @@
+HTML hyper txt markup language
+超文本标记语言（之所以称为超文本语言，是因为文本中可以引进超级链接）
+标记语言：内容，结构，文档
+编程语言：表达逻辑
+*标签
+其标签的嵌套规则几乎和数学公式一样。<div></div>
+其结构类似于树状结构（递归结构）
+ *<开始标签>yuy</结束标签>,<自闭合标签/>
+ 某些情况下，某些非自闭合标签可以省略结束标签
+	*页面标题即title标签
+		*title标签仅支持纯文本内容，不支持嵌套
+	*页面图标即浏览器标题栏页面上的那个小图标
+		*<link rel="icon" href=" ">
+		*也可用favicon.icon添加在网址后来请求得到这个网站的图标
+	*body标签；要在页面中被显示的内容都放在这个标签里，
+		*如页面中没有html或body标签，浏览器会自动添加，将页面内容包含在body里
+		*如html或body标签结束后还有其他标签，则之前的结束标签被认为无效，直至没有其他标签出现
+	*base标签，hgroup标签（h5新增，当不同的标题在一起显示时，可以用它代替div标签），
+	*a标签；锚（ancor）和href属性一起使用，可以跳转到特定网页或页面的特定位置，通过和target属性
+		*（_self:在当前页面打开、_blank:打开新的页面、_)可以指定页面的打开方式
+		*当href=" "时为当前页面
+	*target属性，download属性，img标签，usemap标签，
+	*em标签；让字体为斜体，有强调语气
+	*strong标签;给字体加粗，有更重的强调语气。
+	*b标签；加粗字体。
+	*i标签；
+	*pre标签；表达预文本格式，常配合code标签一起使用，用来表示高亮的代码。
+	*ul和ol标签；unorderd list/ordered list（无序列表和有序列表），用来表示多个同类选项，其子节点必须只能是li标签，而li标签里可以是任何标签。
+	*dl标签；description list ，子标签dt和dd，一个dt可以对应多个dd。
+	
+表单元素	
+	*form标签
+		*action属性
+		*
+	*input标签；
+	  type的属性值
+			*txt 文本
+			*chekbox 
+			*radio 单选框
+		  *file
+	 			*accpt属性，可以接受的文件类型 <input type="file"
+				 安全问题
+				 multiple （是否支持多选文件）
+			*hidden
+			*button 
+			*submit 单击提交
+			*reset
+			*number
+			*range min~max范围选择，step步伐	
+			*autofocus 
+	*button标签
+		*
+	*label标签
+		*一般与chekbox及radio一起用，以扩大这两个按钮的可点击区域
+		*for属性
+	*select标签
+		*
+	
+	*option标签
+		*value属性
+	*textarea元素（标签）
+	*fieldset 标签
+		可以把input标签集中在一起，可以用dis
+	
+	表格元素
+	*table 标签
+		*可以用来做布局，现在较少用（语义很差，可读性差，可维护性差）
+		*caption 表格标题 一个可选
+		*thead 表头 一个可选
+		*tbody 表体 零个或多个
+		*tr table row cell 一个或多个
+			*td 一个或多个
+		*tfoot 一个可选
+		*colgroup 零个或多个
+			*col 一列
+		*colspan 跨列
+		*rowspan 跨行
+		tr、td不能和其他标签并列
+
+		*map标签
+		与area属性一起使用定义一个图像映射（一个可点击的链接区域）
+			*name 
+			*area 仅在map元素内部使用
+				*coords 给热点区域设定具体的坐标值
+				*shape 相关联的热点的形状
+					*rect 矩形（
+					*circle 圆形
+					*poly 多边形
+			*如果设置id属性，那么id的属性值必须和name属性值一致。
+			*usemap
+
+		*iframe标签
+			在一个页面里划定一个区域来显示其他页面的内容
+			通常其他网站不允许嵌套显示，因为有安全隐患。
+			可以在标签之间写上不支持此标签时的退化内容<p>您的浏览器不支持。。。<p>
+			*src属性，name属性常和a标签搭配使用。
+
+		*frameset&frame
+		*把一个页面分成若干个页面来显示某个指定的页面。
+		*framesset嵌套frame，使用cols和rows属性
+		*noframe 浏览器不支持时使用该标签。
+
+		*role&aria-
+		aria：accessible rich internet
+		role描述一个非标准的tag的实际作用。
+		用来模拟传统软件的交互ui，增加读屏软件的可读性，让盲人也能无障碍阅读。
+		一般用在非语义标签上，增加acisibility
+
+
+*缩进 indent
+ *一般缩进两个空格。
+    *一个标签如果被一个标签包含在内，则它相对于这个标签缩进一个层级。
+    *如果一个标签里只有纯文字，可以把文字包含在内而不缩进。
+    *一般来说，非块级元素在内容不多的情况下可以选择不缩进。
+*语义化
+*属性
+	每个标签可以接受一个或多个属性
+	属性可以有值也可以没有，值一般用双引号包裹，当属性的值力没有空格，引号等特殊字符时，是可以不用引号抱起来
+	全局属性：（可以用在所有元素上面且有实际意义）id，title，alt，name，class，tabindex
+*html 结构
+  文档声明
+	浏览器会忽略文字与文字之间多个空格的情况。
+	如果不想css中空格被合并，可以用html实体：&nbsp；，但注意该空格不是真正的空格，其ASCII编码是160，Non Breaking Space
+*转义字符（html实体）
+	常用
+*Unicode

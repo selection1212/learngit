@@ -1,0 +1,13 @@
+
+git init 在一个文件夹的.git文件夹下初始化一个仓库。
+git status 查看当前仓库的状态
+git add file.txt 添加file.txt到待提交区
+git commit -m "提交信息"
+git log 查看提交日志/历史
+git diff 显示被跟踪的文件的修改状态
+git config --global user.name
+git config --global user.eamil
+git remote
+git push
+
+sourcetree软件

@@ -1,0 +1,202 @@
+1.清除浮动与闭合浮动分别指什么？它们的区别与联系是什么？
+清除浮动：通过clear属性，使块框向下移动，让块框一边或两边都没有浮动元素。
+闭合浮动：通过增加包含块的高度，使其能够将后代浮动元素完全包住。（让
+闭合浮动可以避免后代浮动元素高度超过父元素时，父元素高度塌陷。
+联系：一些闭合浮动的办法需要清除浮动的参与。
+
+2.Css Sprite称为Css 精灵或雪碧，当一个页面有多个小图时，可以将小图集成在一张大图上，使用时可以通过Css 背景图片的相关属性来把小图从大图里抠出来，用在页面里的特定位置，一般来说是用来做图标，或者是用来做页面本身的装饰元素。
+优点：每张图片下载都需要建立一个网络连接，将其合并成一张图片只需要建立一次网络链接
+缺点：合并/修改图片很麻烦。
+
+3.绝对定位，上下左右都是0，定宽高，margin为auto。
+  （2）绝对定位，上左为50%，元素自身的
+  通过设置负margin
+
+  4.单元格-
+
+  5.a为列表元素？且向左浮动，浮动元素外边距不能超过 父级元素的顶端，
+     浮动元素的顶端不能超过前面浮动元素的顶端
+     每个a标签在高度上不能超过其所在的li的高度，每个a标签
+
+ 6. BFC:浮动元素包含块设置overflow属性，属性值可以为hidden/auto/scoll ，display：table/触发BFC
+    清除浮动以把包含块撑大：在包含块末端添加空标签，并设置clear：both；
+    
+
+  7.border-collapse 合并表格边框 collapse/separate；
+     caption-side：top/bottom
+     empty-cell：hide/show；让表格隐藏
+     border-spacing：。。；控制表格水平和垂直方向上的间距？
+     table-layout：auto/fixed；
+
+  8.常规流（块级）布局：width、height、margin、padding
+    行内布局：font-size、line-height、inline-height、vertical-align、margin、行内块或行内替换元素/盒模型属性
+    浮动布局：float、clear、overflow：hidden/auto、display：table、margin
+    定位布局：position：static/relative/absolute/sticky/fixed 、left/right/top/bottom、盒模型
+    当position值为realive时可以和浮动一起应用
+  
+  9. 因为动画实际上就是以一定的频率刷新画面，而人眼要看到流畅的画面所需要的最低刷新频率大致为60hz，一共28张图片，0.466s播放完成，刷新频率大致为60hz
+     屏幕的刷新频率为60hz，刷新间隔为16ms 
+
+  10.常规流即normal flow ，除浮动元素和定位外，其他绝大部分都可以归为常规流。页面的内容从上往下，从左往右展示
+     包含块：拥有子元素的父级元素？？？？一个元素的布局上下文，一个元素的布局主要受包含块的影响，一个元素的位置取决于包含块的位置。
+
+  11.常规流： （最近的块级祖先框、表单元格或行内块祖先框的内容边界（content edge））
+     浮动元素：离其最近的父级祖先元素
+     定位元素：离其最近的定位父级祖先元素
+
+  12. *：nth-of-type（） 某元素的直接子元素中第一个能匹配*的元素
+  
+  13. background-color：设置背景颜色
+      background-img：url（）：设置背景图片
+      background-attachment：
+      background-size：用来设置背景图片的尺寸（cover/contain/具体尺寸？） 
+      background-position：设置背景图片开始渲染的位置（从图片的左上角开始）
+      clip：
+      repeat：
+      origin： border/padding/content-box 从哪个盒子的角落开始渲染
+    
+      14.visibility：hidden,隐藏元素，但元素之前所占空间仍将保留；会影响布局，此属性可以动画（不能渐变，可延迟）
+        display:none; 隐藏元素（相当于不存在），但元素之前所占空间将不会保留；？
+        opcity：0；元素透明，依然可以交互
+
+     15.input：checked/：valid/：invalid/：required/：optional/：hidden
+     
+     16.none/inline-block/block/table/inline/inhrit/inline-table/list-item/table-cell/run-in
+         浮动元素默认为block，表单元素默认为table或inline-table
+
+     17.可以对包含块设置overflow：hidden；切掉绝对定位超出的部分，用在包含块上
+        clip：
+        clip-path
+     
+     18.应用cursor属性 cursor：pointer手型 cursor：text I型
+
+     19.
+
+     20.<!DOCTYPE html>
+     <html lang="en">
+     <head>
+       <meta charset="UTF-8">
+       <title>Document</title>
+       <style>
+           div{
+           xwidth:500px;
+             height:500px;
+             border:2px solid red;
+             background-image:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2993396273,3023277058&fm=27&gp=0.jpg);
+             background-position:left 3px bottom 5px;/*3px calc(100% - 5px);*/  /* 0 100% ;  padding: 0 0 5px 3px ;  background-origin: content-box; */
+             background-repeat:no-repeat;
+}
+       </style>
+     </head>
+     <body>
+     <div></div>
+     </body>
+     </html>
+
+   21.可访问性相关的属性/用来让单元格与去对应的单元格关联。
+
+   22.
+
+   23.合并的原则是以最有意思的边框为准
+   优先级：边框宽度>边框样式>来源
+   其中边框样式border-style：double/solid/dotted
+    边框宽度以宽的一边为准
+    
+    
+    24.BFC可以看作是一个独立的盒子，它里面的子元素不会影响盒子外的布局，它仍是普通流。触发BFC的元素相当于是一个iframe或浏览器窗口
+       BFC触发后，父元素会包住子元素里的浮动元素，Bfc会阻止浮动元素重叠，会阻止外边距叠加。
+       设置overflow:hidden/auto/scroll；或声明display：table；在元素末尾添加空标签div/br或使用：after伪元素，并设置clear：both。
+       position：absolute/fixed
+
+
+    25. 为了兼容低版本ie浏览器而写的特殊语法的css代码
+        vendor prefix -浏览器引擎前缀，主要是各种浏览器用来试验或测试新出现的CSS3 属性特征
+        -moz- 火狐等/ -webkit- safari，谷歌等/ -o- opera / -ms- ie？   
+        不带前缀的版本放到最后一行。
+        
+
+     26.<!DOCTYPE html>
+     <html>
+     <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width">
+       <title>JS Bin</title>
+       <style>
+       p{border:1px solid;
+         width:100px;
+         white-space:nowrap;
+         text-overflow:ellipsis;
+         overflow:hidden;}
+       </style>
+     </head>
+     <body>
+      <div>
+        <p>文字溢出后显示省略号。</p>
+      </div>
+     </body>
+     </html>
+
+     27.resize：none；
+        resize：horizontal/vertical；
+        textarea{  max-width：
+                   }
+
+     28. 把动画时间分成10个片段执行，在每一个时间片的结束的时刻执行值的突变/跳动
+
+     29.Flash Of Unstyled Content
+        样式表加载太慢造成页面的html没样式，解决办法是把css放进页面destyle标签里，更优的办法是只放页面
+
+     30.  （1）。元素作为父元素的唯一子元素
+           （2）。 元素作为父元素的唯一。子元素
+            （3）父元素中第一个。子元素
+            （4）父元素中最后一个出现的。子元素
+            （5）
+            
+            
+
+     31. reset.css 主张把所有元素的样式重置
+         normalize.css 改良派，主张尽量保留浏览器的默认样式，把浏览器不同的地方调整到相同
+
+     32.
+     
+     33.
+
+     34.h1 {quotes:"《‘ ’》"}
+
+     35.？？？
+
+     36
+         
+
+
+
+
+
+      
+            
+
+
+
+
+
+      
+            
+      39.graceful degrade：比例下降/优雅降级
+         shrink：缩小
+         alternative：选择，供选择的
+         render：渲染
+         surprisingly：令人惊讶地
+         convention：协定，习俗
+          trigger：触发
+           syntax：语法
+          pixel ratio：像素比列 
+          linear：线性 的 
+          series：系列，串联
+          chain：链
+           keyframe：关键帧
+           unique：独特的
+           maintainable：可维护的
+           dppx dots per px
+           dpi dots per inch 
+           instant 立刻马上
+           precede 前置的

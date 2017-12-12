@@ -294,12 +294,12 @@ isBoolean : function isBoolean(value){
  * @returns {string}
  */
 join: function join(array,separator){
-    this.c = separator;
+    var c = separator;
     if(array.length === 0){
         return "";
     }
     return array.reduce(function(a,b){
-        return (a +=""+ this.c + b);
+        return (a +=""+ c + b);
     })
 },
 /**
@@ -356,6 +356,25 @@ pull: function pull(array,...values){
        }
    }  return array; 
 },
-
+/**
+ * 
+ * 反转数组
+ * @param {any} array 
+ * @returns 
+ */
+reverse:function reverse(array){
+    let res = new Array(array.length);
+    array.forEach(element =>res.unshift(element));
+    res.length = array.length;
+     return res;
+},
+sortedIndex:function sortedIndex(array,value){
+    if
+    array.reduce((a,b,index) =>{if (value >= a&& value < b){
+        return index;
+    } else if(value <= a && value > b){
+        return index;
+    } else if()})
+}
 }   
 

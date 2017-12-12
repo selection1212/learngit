@@ -1,0 +1,17 @@
+<p style = "margin-top:150px;  text-align:center"> 
+    <img id = "cat" width = "100px" height = "80px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515433603433&di=efac902e7cbbf393979d9a6a0f3acaec&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fb17eca8065380cd7a382b927a844ad345882815f.jpg" style = "position:relative" >
+</p>
+<script>
+    var cat = document.querySelector('#cat')
+    var angle = 0
+    var lasttime = null
+
+    function animate(time){
+        angle +=(time - lasttime)*0.002
+        lasttime = time
+        cat.style.top = Math.sin(angle)*200 + 'px'
+        cat.style.left = Math.cos(angle)*200 + 'px'
+        requestAnimationFrame(animate)
+    }
+    requestAnimationFrame(animate)
+</script>

@@ -1,0 +1,31 @@
+声明数组 a = [ ]or a = new Array（）；
+在js中，基础数据类型按值对比，而对象按在内存中的位置对比，即只有两个变量指向同一对象时才会返回true。
+<h2>Objects as maps</h2>
+
+11.28 unicode编码方式
+      以0开头即一个字节表达一个编码
+      以110开头即两个字节表达一个编码
+
+toString()和parseInt(string,radix)
+首先parseInt()函数解析一个字符串参数，并返回一个指定基数的整数（这里基数在2-36内，指的是string所属的进制，并将其转换成10进制的数字）、
+其次如果string不属于指定基数的进制内，则可能返回NaN
+代码如下
+parseInt(101,2)//返回5
+parseInt(8,3)//返回NaN  3进制内不会有8，所以返回NaN
+parseInt(16,3)//返回1   6被忽略掉 如果 parseInt 遇到了不属于radix参数所指定的基数中的字符那么该字符和其后的字符都将被忽略。接着返回已经解析的整数部分。
+parseInt('dsff66',16)//返回13
+
+在没有指定基数的情况下，默认基数是10（十进制)
+同时parseInt（）可以把一个小数或字符串转换成整数
+parseInt(21.2)//返回21
+parseInt(‘17’)//返回Number类型的17
+parseInt(4.7, 10); //返回4
+parseInt(4.7 * 1e22, 10); // 返回4  Very large number becomes 4
+parseInt(0.00000000000434, 10); //返回4  Very small number becomes 4
+
+toString()
+toString(radix)方法返回指定Number对象的字符串表示形式（以radix指定，2-36范围内）
+(56).toString(); //返回"56"
+即toString（）可以把对象从10进制转换成指定的进制，而parseInt（）则把其他进制转换成10进制。
+
+在js中，尽量不使用包装后的原始类型

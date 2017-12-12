@@ -1,0 +1,104 @@
+1.viewport的意义：
+<meta name="viewport" content="width=350/dievice-width,user-scalable=1/0">
+width指代的是【手机】浏览器将会以多宽的初始包含块（及浏览器窗口）来渲染页面。
+不过并不代表内容超出了这个宽度就看不见了，
+布局技巧：Android 5.0以上
+          viewport 的width
+2. <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  div.solid{
+    width:400px;
+    height:200px;
+    background-color: red;
+    border-top-left-radius: 50% 100%  ;
+    border-top-right-radius: 50% 100%  ;
+  
+  }
+  div.hollow{
+     width:400px;
+    height:200px;
+    border: 2px red solid;
+    border-top-left-radius: 50% 100%  ;
+    border-top-right-radius: 50% 100%  ;
+    
+  }
+ 边框、裁剪、背景渐变radial-gradient
+
+3.
+reflow:回流
+当一个或多个元素的属性发生变化并导致后面的页面重新计算布局时，就是说页面产生了回流。
+ repaint:重绘
+ 当一个元素的属性发生变化需要浏览器重新绘制页面的某部分，但并不影响时，就是产生了重绘
+
+
+  
+
+  5. 括号不成对，表达式后添加 分号/不加 
+     大于等于号和小于等于号
+     for之后应有两个分号/语句？
+     else if 重复
+
+  6. function isLeapYear(n){
+      if(n % 4 == 0&&n % 100 !== 0){
+          return true
+      } else if (n % 400 == 0 && n % 4000 !== 0){
+          return true
+      }   return false
+  }   
+
+  7.
+  8.NaN， undefined参与计算返回NaN，Null参与计算，Null被当做0参与计算。
+  9. ;[()+-/'']
+  但某行的开头（[+-/'时，在上一行末尾加分号
+  10. 379 ????
+  11.一个靠自身控制无法终止的程序称为死循环。当程序没有结束条件时，会陷入死循环。/循环结束条件始终不满足就会触发死循环
+  12.通过断点或者在程序开头添加debugger，排查代码的错误。
+  当程序运行到debugger语句时
+  13.当一个事件有多种不同情况且分类较为简单,并有相对应的结果时,可以用switch/case语句表达;而if/else语句的作用与其类似,但可以表达更为复杂的情况.//switch与case后面的值执行的是全等运算，
+  14.
+
+  15.while语句先判断再执行语句,do while 先执行一次后再判断是否继续执行
+  16.假设a不是素数,即在1~a之间一定会有a=b*c(b>c),由于a=sqrt(a)*sqrt(a),所以可以得到b>sqrt(a)>c,所以如果a不为素数，那么在1至sqrt（a）中至少有一个数能被a整除，又若a不能把范围内的素数的倍数除尽，则对应的素数也无法除尽。
+  17. 
+
+
+
+
+  18. numbers,strings, boolean values ,objects,Null, undefined
+      + - / * < > &&  || 
+      按位运算 | & ^  ~
+      移位运算 5<<2 保留符号位 -5>>2 不保留符号位
+      
+  19. 逻辑与、逻辑或、逻辑非；
+      异或、同或，与非，或非
+
+      
+  20. 
+  21.当使用“==”或“！==”且两边数据类型不一致时
+     （当数据类型与运算符所期待的不同时）
+  22.不能，for是一个关键字（Key word）
+      （reserverd word）未来可能被当作关键字
+
+    25. 用一个父元素自转，子元素同步反转，抵消子元素自传效果
+        方法二：一个元素旋转一个角度，再沿该方向平移，再反转该角度
+
+  26.perspective:1000px 距离多远看当前元素
+
+  27.
+
+  28.
+
+  29.
+
+  30.
+
+  31.max-content/min-content/fit-content/fill/
+
+
+  35.
+
+

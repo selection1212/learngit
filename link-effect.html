@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.coddrops-top {
+            width: 1903px;
+            height: 26px;
+            background-color: aliceblue;
+            position: relative;
+
+            .arrow+.water {
+                display: inline-block;
+                position: absolute;
+                cursor: pointer;
+                color: #888;
+                padding: 0 12px;
+                letter-spacing: 0.1rem;
+                box-sizing: border-box;
+                text-decoration: none;
+            }
+            .arrow {
+                left: 0;
+                &::before {
+                    content: '';
+                }
+            }
+            .water {
+                right: 0;
+                &::before {
+                    content: '';
+                }
+            }
+        }
+
+        header {
+            padding: 32px;
+            box-sizing: border-box;
+            text-align: center;
+            color: #89867e;
+            background-color: rgba(0, 0, 0, 0.05);
+            h1 {
+                font-size: 2.625em;
+                line-height: 1.3;
+                /*???*/
+                margin: 0;
+                font-weight: 300;
+                >span {
+                    display: block;
+                    font-size: 60%;
+                    color: #ceccc6;
+                    padding: 0 0 15.12px 2.52px;
+                }
+            }
+            p {
+                display: block;
+                width: 827px;
+                height: 19px;
+                margin: 16px 0;
+                color: #89867e;
+            }
+        }
+
+        .color1 {
+            padding: 160px 48px;
+            box-sizing: border-box;
+            background-color: #435a6b;
+            text-align: center;
+            font-size: 1.35em;
+            margin: 0;
+            a {
+                margin: 15px 25px;
+                display: inline-block;
+                color: white;
+                position: relative;
+                text-decoration: none;
+                text-align: center;
+                &::before {
+                    content: '[';
+                    position: absolute;
+                    transform: translate(5px, -2px);
+                    opacity: 0;
+                }
+                &::after {
+                    content: ']';
+                    position: absolute;
+                    transform: translate(-5px, -2px);
+                    opacity: 0;
+                }
+                &:hover::before {
+                    transform: translateX(-20px);
+                    opacity: 1;
+                    transition: all 0.3s linear;
+                }
+                &:hover::after {
+                    transform: translate(20px);
+                    opacity: 1;
+                    transition: all 0.3s linear;
+                }
+            }
+        }
+
+        .color2 {
+            padding: 160px 48px;
+            color: white;
+            background-color: #0e83cd;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 44px;
+            span {
+                display: inline-block;
+                box-sizing: border-box;
+                position: relative;
+                margin: 15px 25px;
+                padding: 0 14px;
+                text-align: center;
+                font-weight: 400;
+                font-size: 1.35em;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transform-style: preserve-3d;
+                transition: all 0.3s;
+                background-color: #28a2ee;
+                box-shadow: rgba(0, 0, 0, 0.1);
+                transform-origin: 50% 50% -22px;
+                &::after {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    content: attr(span-data);
+                    left: 0;
+                    top: 100%;
+                    transform-origin: 50% 0;
+                    transform: rotateX(-90deg);
+                    background-color: #28a2ee;
+                }
+            }
+
+            span:hover {
+
+                transform: rotatex( 90deg);
+                background-color: #0965a0;
+            }
+        }
+
+        .color3 {
+            padding: 160px 48px;
+            color: white;
+            background-color: rgb(241, 159, 15);
+            box-sizing: border-box;
+            text-align: center;
+            a {
+                display: inline-block;
+                box-sizing: border-box;
+                margin: 15px 25px;
+                padding: 8px 0;
+                text-decoration: none;
+                outline: none;
+                color: white;
+                font-weight: 400;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    height: 3px;
+                    width: 100%;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    top: -moz-calc(100% + 25px);
+                    top: -webkit-calc(100% + 25px);
+                    top: calc(100% + 25px);
+                    left: 0;
+                    opacity: 0;
+                }
+            }
+            a:hover::after {
+                transform: translate(0, -10px);
+                opacity: 1;
+                transition: all 0.5s;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="catainer>
+     <div class=" coddrops-top ">
+     <a href=" " class="arrow "><span class=>PREVIOUS DEMO</span></a>
+     <a href=" " class="water "><span></span></a>
+    </div>
+     <header><h1>Creative Link Effects <span>Subtle and modern effects for links or menu items</span></h1>
+     <p>Please note that every browser supports transitions on pseudo elements.</p></header>
+     <section class="color1 ">
+       <a href=" ">WAFTURE</a>
+       <a href=" ">SUMPTUOUS</a>
+       <a href=" ">SCINTILLA</a>
+       <a href=" ">PROPINQUITY</a>
+       <a href=" ">HARBINGER</a></section>
+     <section class="color2 ">
+       <span span-data="RATATOUILLE ">RATATOUILLE</span>
+       <span span-data="LASSITUDE ">LASSITUDE</span>
+       <span span-data="MURMUROUS ">MURMUROUS</span>
+       <span span-data="PALIMPSEST ">PALIMPSEST</span>
+       <span span-data="ASSEMBLAGE ">ASSEMBLAGE</span>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+     <section></section>
+ </div>   
+</body>
+</html>

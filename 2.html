@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    section{
+        width:220px;
+        height: 220px;
+        margin:220px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotatex(0deg) rotateY(0deg);
+        transition:all 30s ;
+    }
+     section div {
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  text-align: center;
+  line-height: 150px;
+  font-size: 80px;
+  color: black;
+  background-image: linear-gradient(45deg, red, green 50%, blue);
+}
+
+div:nth-child(1) {
+  transform: rotateX(0deg) translateZ(110px);
+}
+
+div:nth-child(2) {
+  transform: rotateX(-90deg) translateZ(110px);
+}
+
+xdiv:nth-child(3) {
+  transform: rotateY(90deg) translateZ(110px);
+}
+
+xdiv:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(110px);
+}
+
+xdiv:nth-child(5) {
+  transform: rotateY(180deg) translateZ(110px);
+}
+
+xdiv:nth-child(6) {
+  transform: rotateX(90deg) translateZ(110px);
+}
+
+section:hover {
+  transform: rotateX(3600deg) rotateY(0deg);
+}
+    </style>
+</head>
+<body>
+    <section>
+       <div>1</div> 
+       <div>2</div>
+       <div>3</div>
+       <div>4</div>
+       <div>5</div>
+       <div>6</div>
+   </section>  
+ </body>
+</html>
