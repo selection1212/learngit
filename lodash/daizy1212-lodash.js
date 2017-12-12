@@ -139,11 +139,11 @@ flatten: function flatten(array) {
  * @param {any} array 
  * @returns 
  */
-flattenDeep:function flattenDeep(array) {
-    var count = 0;
+flattenDeep:function flattenDeep(array) {                            
+    var count = 0;                                         
     for (i = 0; i < array.length; i++) {
         if (Array.isArray(array[i])) {
-            var newary = array[i];
+            var newary = array[i];                  
             array.splice(i, 1);
             for (j = 0; j < newary.length; j++) {
                 array.splice(i, 0, newary[j]);
@@ -267,6 +267,89 @@ intersection: function intersection(...arrays) {
         }
     }
     return newary;
+},
+/**
+ * 
+ * 
+ * @param {any} value 
+ * @returns {Boolean}
+ */
+isArray:function isArray(value){
+    return(Object.getPrototypeOf(value) === Array.prototype);
+},
+/**
+ * 
+ * 
+ * @param {any} value 
+ * @returns {Boolean}
+ */
+isBoolean : function isBoolean(value){
+    return(Object.getPrototypeOf(value) === Boolean.prototype);
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} separator 
+ * @returns {string}
+ */
+join: function join(array,separator){
+    this.c = separator;
+    if(array.length === 0){
+        return "";
+    }
+    return array.reduce(function(a,b){
+        return (a + this.c + b);
+    })
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @returns {number}
+ */
+last: function last(array){
+     return array.pop();
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} value 
+ * @param {any} [fromIndex=array.length-1] 
+ * @returns {number}
+ */
+lastIndexOf: function lastIndexOf(array,value,fromIndex=array.length-1){
+    for(let i = fromIndex ; i >= 0 ; i++){
+        if(array[i] === value){
+            return i;
+        }
+    }
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {number} [n=0] 
+ */
+nth: function nth(array,n=0){
+return (n >=0) ? array[n-1]:array[array.length+n];
+},
+/**
+ * 
+ * 
+ * @param {any} array 
+ * @param {any} values 
+ * @returns {array}
+ */
+pull: function pull(array,...values){
+   for(let value of values){
+      var k = array.indexOf(value);
+       while(k !== -1){
+           array.splice(k,1);
+           k = array.indexOf(value,k+1);
+       }
+   }  return array; 
 },
 
 }   
