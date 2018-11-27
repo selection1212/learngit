@@ -106,6 +106,9 @@ HTML hyper txt markup language
 		用来模拟传统软件的交互ui，增加读屏软件的可读性，让盲人也能无障碍阅读。
 		一般用在非语义标签上，增加acisibility
 
+		*font标签
+		
+
 
 *缩进 indent
  *一般缩进两个空格。

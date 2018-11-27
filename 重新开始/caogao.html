@@ -5,11 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        /*p::first-letter{font-size: 200%;}*/
+        /*p::before{content: "["; color:blue;}*/
+        *:lang(fr){color:pink;}
+       /* p::after{content: "]";color: red;}*/
+        a:visited {color:red; text-decoration: line-through; font-style :italic;}
+        input:focus {background-color: silver; font-weight: bold;}
+        body *:hover{background-color: yellow;}
+        p{color:red  ; font-size: 15px;}
+        p#first{color:blue;}
+        li:nth-child(-n+5){color:red;}
+        p.line {text-indent: 2em; 
+                text-align: center; 
+                word-spacing: 1em; 
+                text-shadow: gray 5px 0.5em 2px;
+                
+                }
+        #english{vertical-align: 250%;}
+        .chinese{vertical-align: text-top;}
+        </style>
 </head>
 <body>
-    <img src="" alt="wufa" usemap=#product>
-    <map name="product">
-        <area shape="rect" coords="" href="3.html" alt="kkk">
-    </map>
+    <form>
+        <div><label for="display-name">
+            <span class=""></span>
+        </label>
+    </div>
+    </form>
+    <p id="first">aaaa</p>
+    <p class="line">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+         <img src="" alt="hello" id="english"> Error <img src="" alt="你好" class="chinese">
+          libero atque iure, 
+        ullam illo aspernatur sunt obcaecati quisquam dolore,   ad, vero autem corrupti 
+        nihil natus ea laboriosam cumque dicta expedita.</p>
+    <ul>
+        <li>E</li>
+        <li>E</li>
+        <li>E</li>
+        <li>E</li>
+        <li>E</li>
+        <li>E</li>
+    </ul>
+    <a href="wwww" target="_self"  >wwwwwww</a> <br>
+    Name <input type="text" value="name">
 </body>
 </html>
+
