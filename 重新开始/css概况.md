@@ -24,7 +24,7 @@ Cascading Style Sheets 层叠样式表
         可以改变元素的显示角色
 如何让css在html中生效
  * style标签/link标签
-    *link标签用来引入外部样式表（），<link               rel="stylesheet" type="text/css" href="sheet1" media="all" >;
+    *link标签用来引入外部样式表（），<link  rel="stylesheet" type="text/css" href="sheet1" media="all" >;
       link标签必须放在head元素中。
       其中media可以指定样式表生效的时间点，比如media:"print"表示在打印时生效。
      *外部样式表（不能包含任何文档标记）
@@ -104,6 +104,8 @@ Cascading Style Sheets 层叠样式表
       * 声明越后出现，权重越大。
       *不来自CSS的样式
         * font的优先级(优先级为0)，出现在作者样式表最前面，只要有作者或用户样式，这种表现提示会被覆盖。
+
+* 
 
    
    
